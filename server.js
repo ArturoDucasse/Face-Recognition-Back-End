@@ -25,19 +25,12 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-//Clarifai API (Here we get the image border information)
-const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
-const stub = ClarifaiStub.grpc();
-const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key f9fc9ac54eea4e24b07463b58ea7cd42");
-
 //bcrypt (hash system)
 const bcrypt = require('bcrypt');
 
 //Root used to get all users in the Database
 app.get('/', (req, res)=>{
-    db.select('*').from('users')
-    .then(user => res.json(user));
+res.send('Working');
 })
 
 //Compares the user infomation submited in the sign in form with the database
