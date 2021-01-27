@@ -46,4 +46,4 @@ app.get('/profile/:id', (req, res) => {profileHandler(req, res, db)})
 app.put('/image', (req, res) => {imageHandler(req, res, db)});
 
 //Run the following at start
-app.listen(3000, () => console.log("Operating on route 3000"));
+app.listen(process.env.PORT || 3000, () => console.log(`Operating on port ${PORT}`));
