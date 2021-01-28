@@ -4,7 +4,6 @@ const registerHandler = (req,res, db, bcrypt)=>{
     const saltRounds = 10;
     bcrypt.hash(password, saltRounds, function(err, hash) {
     // Store hash in your password DB.
-        // Store hash in your password DB.
         db.transaction(trx =>{
             trx.insert({
                 hash: hash,
@@ -32,5 +31,5 @@ const registerHandler = (req,res, db, bcrypt)=>{
     }
 
     module.exports = {
-        registerHandler:registerHandler
+        registerHandler: registerHandler
     }
