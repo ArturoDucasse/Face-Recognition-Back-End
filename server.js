@@ -26,6 +26,8 @@ app.use(cors());
 //bcrypt (hash system)
 const bcrypt = require("bcrypt");
 
+console.log(app, "express");
+
 //Root used to get all users in the Database
 app.get("/", (req, res) => {
   res.send("Working");
@@ -51,7 +53,7 @@ app.put("/image", (req, res) => {
   imageHandler(req, res, db);
 });
 
-//Run the following at start
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`Operating on port ${process.env.PORT}`)
+//Current port
+const listener = app.listen(process.env.PORT || 3000, () =>
+  console.log(`Operating on port ${listener.address().port}`)
 );
