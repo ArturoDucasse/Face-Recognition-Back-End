@@ -1,7 +1,7 @@
 # Face-Recognition-Back-End
 
 # Description
-Project website that enables the user to detects if the photo submited has an face on it
+Website that enables the user to detects if the photo submited has an face on it
 # Prerequisites
 - bcrypt
 
