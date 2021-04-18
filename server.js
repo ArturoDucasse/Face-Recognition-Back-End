@@ -7,11 +7,14 @@ const { imageHandler } = require("./Controllers/image");
 //Knex
 const knex = require("knex");
 const db = knex({
-  client: "pg",
+  client: 'pg',
+  version: '5.0',
   connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: false,
-  },
+    host : 'ec2-3-216-89-250.compute-1.amazonaws.com',
+    user : 'lzsjzzsioxcjxe',
+    password : '',
+    database : 'degofj9khejmj4'
+  }
 });
 
 //Express
@@ -25,8 +28,6 @@ app.use(cors());
 
 //bcrypt (hash system)
 const bcrypt = require("bcrypt");
-
-console.log(app, "express");
 
 //Root used to get all users in the Database
 app.get("/", (req, res) => {
@@ -57,3 +58,5 @@ app.put("/image", (req, res) => {
 const listener = app.listen(process.env.PORT || 3000, () =>
   console.log(`Operating on port ${listener.address().port}`)
 );
+
+console.log(process.env.DATABASE_URL);
