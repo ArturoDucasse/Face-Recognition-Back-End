@@ -7,14 +7,11 @@ const { imageHandler } = require("./Controllers/image");
 //Knex
 const knex = require("knex");
 const db = knex({
-  client: 'pg',
-  version: '5.0',
+  client: "pg",
   connection: {
-    host : 'ec2-3-216-89-250.compute-1.amazonaws.com',
-    user : 'lzsjzzsioxcjxe',
-    password : '',
-    database : 'degofj9khejmj4'
-  }
+    connectionString: process.env.DATABASE_URL,
+    ssl: false,
+  },
 });
 
 //Express
