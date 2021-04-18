@@ -28,7 +28,7 @@ const bcrypt = require("bcrypt");
 
 //Root used to get all users in the Database
 app.get("/", (req, res) => {
-  res.send("Working", process.env.DATABASE_URL);
+  res.send(process.env.DATABASE_URL);
 });
 
 //Compares the user infomation submited in the sign in form with the database
