@@ -28,7 +28,7 @@ const bcrypt = require("bcrypt");
 
 //Root used to get all users in the Database
 app.get("/", (req, res) => {
-  res.send(process.env.DATABASE_URL);
+  res.send("Working");
 });
 
 //Compares the user infomation submited in the sign in form with the database
@@ -55,6 +55,3 @@ app.put("/image", (req, res) => {
 const listener = app.listen(process.env.PORT || 3000, () =>
   console.log(`Operating on port ${listener.address().port}`)
 );
-
-console.log(process.env.DATABASE_URL);
-console.log(process.env.PORT);
